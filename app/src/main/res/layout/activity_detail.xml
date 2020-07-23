@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <ImageView
+        android:id="@+id/cover_bg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop" />
+
+    <com.axun.himalaya.views.RoundRectImageView
+        android:id="@+id/small_cover"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/cover_bg"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="-37.5dp"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cover_bg"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-30dp"
+        android:layout_toEndOf="@+id/small_cover"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/album_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/textColor"
+            android:text="这是标题"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/album_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="这是作者"
+            android:textColor="@color/textColor"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/subscription_bar"
+        android:layout_below="@+id/cover_bg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/shape_subscription_bg"
+            android:layout_marginEnd="14dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:text="+订阅"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/play_bar"
+        android:background="#ebebeb"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/subscription_bar">
+        <ImageView
+            android:id="@+id/detail_play_control"
+            android:src="@mipmap/play_black_normal"
+            android:layout_centerVertical="true"
+            android:layout_width="19dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="19dp"/>
+        <TextView
+            android:layout_toEndOf="@id/detail_play_control"
+            android:layout_centerVertical="true"
+            android:text="继续播放"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textColor="#6C6C6C"
+            android:drawablePadding="9dp"
+            android:id="@+id/track_capsule_panel_toggle"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="选集"
+            android:textSize="10sp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/detail_list_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/play_bar"/>
+</RelativeLayout>
